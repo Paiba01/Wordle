@@ -1,5 +1,6 @@
 import WORDS from "../assets/palabras.json";
 import "./WordleWord.js";
+import "./WordleKeyboard.js";
 
 class WordleGame extends HTMLElement {
     constructor() {
