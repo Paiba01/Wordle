@@ -4,8 +4,8 @@ import "./WordleWord.js";
 import "./WordleKeyboard.js";
 import "./WordleSummary.js";
 
-const LOSE_SOUND = new Audio("sonidos/lose.flac");
-const WIN_SOUND = new Audio("sonidos/win.flac");
+const LOSE_SOUND = new Audio("sounds/lose.mp3");
+const WIN_SOUND = new Audio("sounds/win.mp3");
 
 const LETTERS = [
   "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
