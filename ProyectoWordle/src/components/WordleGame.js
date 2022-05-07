@@ -1,6 +1,17 @@
+import confetti from 'https://cdn.skypack.dev/canvas-confetti'
 import WORDS from "../assets/palabras.json";
 import "./WordleWord.js";
 import "./WordleKeyboard.js";
+import "./WordleSummary.js";
+
+const LOSE_SOUND = new Audio("sonidos/lose.flac");
+const WIN_SOUND = new Audio("sonidos/win.flac");
+
+const LETTERS = [
+  "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
+  "a", "s", "d", "f", "g", "h", "j", "k", "l", "ñ",
+  "z", "x", "c", "v", "b", "n", "m"
+];
 
 class WordleGame extends HTMLElement {
     constructor() {

@@ -61,7 +61,7 @@ class WordleKeyboard extends HTMLElement {
     this.render();
   }
 
-  listeners() {
+  listeners() { //escuchamos a los elementos
     const keys = Array.from(this.shadowRoot.querySelectorAll(".letter"));
     keys.forEach(key => {
       key.addEventListener("click", () => {

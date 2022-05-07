@@ -85,7 +85,7 @@ class WordleWord extends HTMLElement {
   }
 
   toString() {
-    return this.word.replace(/ /g, "");
+    return this.word.replace(/ /g, ""); //me devuelve la palabra quitandole los espacios en blanco
   }
 
   isSolved() {
