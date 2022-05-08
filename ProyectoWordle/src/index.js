@@ -1,1 +1,1 @@
-import "./components/WordleGame"
+import "./components/WordleGame.js"
