@@ -28,9 +28,9 @@
                     </div>
                 </div>
 
-                <!--Formulario de Login y registro-->
+                <!--Formulario de iniciar sesión y registro-->
                 <div class="contenedor__login-register">
-                    <!--Login-->
+                    <!--Iniciar sesión-->
                     <form action="" class="formulario__login">
                         <h2>Iniciar Sesión</h2>
                         <div class="group"><label class="label" for="user"></label> <input id="user" class="input" type="text" placeholder="Nombre de usuario" name="username" required/></div>
@@ -38,8 +38,8 @@
                         <button>Entrar</button>
                     </form>
 
-                    <!--Register-->
-                    <form action="" class="formulario__register">
+                    <!--Registro-->
+                    <form action="assets/php/registro_usuario_be.php" method="POST" class="formulario__register">
                         <h2>Regístrarse</h2>
                         <div class="group"><label class="label" for="name"></label> <input id="name" class="input" type="text" placeholder="Nombre" name="nombre" required /></div>
                         <div class="group"><label class="label" for="surnames"></label> <input id="surname" class="input" type="text" placeholder="Apellidos" name="apellidos" required /></div>
