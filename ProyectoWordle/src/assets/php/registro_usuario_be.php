@@ -26,6 +26,32 @@
         $table = "usuarios";
         $sql = "INSERT INTO usuarios (username, password, nombre, apellidos, email) VALUES ('$username1', '$password1', '$nombre', '$apellidos', '$email')";
         $result = $conn->exec($sql);
+
+
+        //Verify users
+        $verificar_email = mysqli_query($conn, "SELECT * FROM usuarios WHERE email='$email' ");
+        $verificar_username = mysqli_query($conn, "SELECT * FROM usuarios WHERE username='$username' ");
+
+        if(mysqli_num_rows($verificar_email) > 0){
+            echo ' 
+                <script>
+                    alert("Este correo electrónico ya se encuentra registrado, inténtalo con otro diferente");
+                    window.location = "../../index.html";
+                </script>
+            ';
+            exit();            
+        }
+
+        if(mysqli_num_rows($verificar_username) > 0){
+            echo ' 
+                <script>
+                    alert("Este nombre de usuario ya se encuentra registrado, inténtalo con otro diferente");
+                    window.location = "../../index.html";
+                </script>
+            ';
+            exit();            
+        }
+
         if (!$result) {
             http_response_code(500);
             echo ' 
