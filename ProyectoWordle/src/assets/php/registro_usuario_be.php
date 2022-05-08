@@ -28,11 +28,23 @@
         $result = $conn->exec($sql);
         if (!$result) {
             http_response_code(500);
-            print "ERROR: " . $conn->errorMsg() . "\r\n";
+            echo ' 
+                <script>
+                    alert("No se ha podido completar el registro, inténtelo de nuevo");
+                    window.location = "../../index.html";
+                </script>
+            ';
+            //print "ERROR: " . $conn->errorMsg() . "\r\n";
         }
         else {
             http_response_code(200);
-            print $name . " was succesfully added to the database \r\n";
+            echo ' 
+                <script>
+                    alert("Usuario registrado satisfactoriamente");
+                    window.location = "../../index.html";
+                </script>
+            ';
+            //print $name . " was succesfully added to the database \r\n";
         }
 
     }
