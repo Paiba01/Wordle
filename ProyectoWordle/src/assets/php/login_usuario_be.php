@@ -1,25 +1,85 @@
 <?php
+    $servername = "localhost";
+    $username = "id18899575_p92dogoj";
+    $password = "acd//a-|^0pW|@3A";
+    $database = "id18899575_wordlebd";
 
-    include 'conexion_be.php'
+    try {          
+        //Gets the insertion data
+        $username1 = $_POST["username"];
+        $password1 = $_POST["password"];
+        
+        if ($username1 == "" || $password1 == "") {
+            http_response_code(400);
+            echo "Bad Request";
+            return;
+        }
 
-    $username1 = $_REQUEST["username"];
-    $password1 = $_REQUEST["password"];
+        //tries to connect to the databse
+        $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE username='$username'
-    and password='$password1'"); 
+        //Executes an insert sql query
+        $table = "usuarios";
+        $result = $conn->query("SELECT * FROM usuarios WHERE username='$username1' AND password='$password1'");
 
-    if(mysqli_num_rows($validar_login) > 0){
-        header("location: ../../wordle.html"); //redireccionar a esta página
-        exit;
-    }else{
-        echo ' 
-        <script>
-            alert("El usuario no se encuentra registrado, verifique los datos introducidos");
-            window.location = "../../index.html";
-        </script>
-        ';
-        exit;
+        /*Verify users NO SE PORQUE NO VA
+        $verificar_email = mysqli_query($conn, "SELECT * FROM usuarios WHERE email='$email' ");
+        $verificar_username = mysqli_query($conn, "SELECT * FROM usuarios WHERE username='$username1' ");
+
+        if(mysqli_num_rows($verificar_email) > 0){
+            echo ' 
+                <script>
+                    alert("Este correo electrónico ya se encuentra registrado, inténtalo con otro diferente");
+                    window.location = "../../index.html";
+                </script>
+            ';
+            exit();            
+        }
+
+        if(mysql_num_rows($verificar_username)>0){
+            echo ' 
+                <script>
+                    alert("Este nombre de usuario ya se encuentra registrado, inténtalo con otro diferente");
+                    window.location = "../../index.html";
+                </script>
+            ';
+            exit();            
+        }
+        */
+
+        if ($result->num_rows != 1) {
+            http_response_code(500);            
+            echo $username1 . " es el usuario y la contraseña es: " . $password1;
+            
+            /*echo ' 
+                <script>
+                    alert("No se ha podido completar el registro, inténtelo de nuevo");
+                    window.location = "../../index.html";
+                </script>
+            ';*/
+            //print "ERROR: " . $conn->errorMsg() . "\r\n";
+        }
+        else {
+            http_response_code(200);
+            echo ' 
+                <script>
+                    alert("Sesión iniciada correctamente");
+                    window.location = "../../wordle.html";
+                </script>
+            ';
+            //print $name . " was succesfully added to the database \r\n";
+        }
+
     }
-
-
+    catch (PDOException $e) {
+        if ($e->errorInfo[1] == 1062) {
+            http_response_code(205);
+            echo "usuarios already added";
+        }
+        else {
+            http_response_code(500);
+            echo "Connection failed: " . $e->getMessage();
+        }
+    }
 ?>
