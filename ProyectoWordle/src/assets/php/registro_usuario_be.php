@@ -28,9 +28,9 @@
         $result = $conn->exec($sql);
 
 
-        //Verify users
+        /*Verify users NO SE PORQUE NO VA
         $verificar_email = mysqli_query($conn, "SELECT * FROM usuarios WHERE email='$email' ");
-        $verificar_username = mysqli_query($conn, "SELECT * FROM usuarios WHERE username='$username' ");
+        $verificar_username = mysqli_query($conn, "SELECT * FROM usuarios WHERE username='$username1' ");
 
         if(mysqli_num_rows($verificar_email) > 0){
             echo ' 
@@ -42,7 +42,7 @@
             exit();            
         }
 
-        if(mysqli_num_rows($verificar_username) > 0){
+        if(mysql_num_rows($verificar_username)>0){
             echo ' 
                 <script>
                     alert("Este nombre de usuario ya se encuentra registrado, inténtalo con otro diferente");
@@ -51,6 +51,7 @@
             ';
             exit();            
         }
+        */
 
         if (!$result) {
             http_response_code(500);
