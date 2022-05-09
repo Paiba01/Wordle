@@ -6,10 +6,10 @@
 
     try {          
         //Gets the insertion data
-        $username1 = $_POST["username"];
-        $password1 = $_POST["password"];
+        $username2 = $_POST["username"];
+        $password2 = $_POST["password"];
         
-        if ($username1 == "" || $password1 == "") {
+        if ($username2 == "" || $password2 == "") {
             http_response_code(400);
             echo "Bad Request";
             return;
@@ -20,55 +20,30 @@
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //Executes an insert sql query
-        $table = "usuarios";
-        $result = $conn->query("SELECT * FROM usuarios WHERE username='$username1' AND password='$password1'");
+        //$table = "usuarios";
+        //$sql = "SELECT * FROM usuarios WHERE username='$username2' AND password='$password2'";
+        //$result = $conn->query($sql);
 
-        /*Verify users NO SE PORQUE NO VA
-        $verificar_email = mysqli_query($conn, "SELECT * FROM usuarios WHERE email='$email' ");
-        $verificar_username = mysqli_query($conn, "SELECT * FROM usuarios WHERE username='$username1' ");
-
-        if(mysqli_num_rows($verificar_email) > 0){
-            echo ' 
-                <script>
-                    alert("Este correo electrónico ya se encuentra registrado, inténtalo con otro diferente");
-                    window.location = "../../index.html";
-                </script>
-            ';
-            exit();            
-        }
-
-        if(mysql_num_rows($verificar_username)>0){
-            echo ' 
-                <script>
-                    alert("Este nombre de usuario ya se encuentra registrado, inténtalo con otro diferente");
-                    window.location = "../../index.html";
-                </script>
-            ';
-            exit();            
-        }
-        */
-
-        if ($result->num_rows != 1) {
-            http_response_code(500);            
-            echo $username1 . " es el usuario y la contraseña es: " . $password1;
-            
-            /*echo ' 
-                <script>
-                    alert("No se ha podido completar el registro, inténtelo de nuevo");
-                    window.location = "../../index.html";
-                </script>
-            ';*/
-            //print "ERROR: " . $conn->errorMsg() . "\r\n";
-        }
-        else {
-            http_response_code(200);
+        $result = $conn->prepare("SELECT * FROM usuarios WHERE username='$username2' AND password='$password2'");
+        $result->bindParam("username",$username2,PDO::PARAM_STR);
+        $result->bindParam("password",$password2,PDO::PARAM_STR);
+        $result->execute();
+        $count = $result->rowCount();
+        
+        if($count){
             echo ' 
                 <script>
                     alert("Sesión iniciada correctamente");
                     window.location = "../../wordle.html";
                 </script>
             ';
-            //print $name . " was succesfully added to the database \r\n";
+        }else{
+            echo ' 
+            <script>
+            alert("Los datos no coinciden, inténtelo de nuevo");
+            window.location = "../../index.html";
+        </script>
+            ';  
         }
 
     }
