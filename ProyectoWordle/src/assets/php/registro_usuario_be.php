@@ -5,7 +5,7 @@
     $database = "id18899575_wordlebd";
 
     try {  
-        //Gets the insertion data
+        //Obtenemos los datos insertados
         $username1 = $_REQUEST["username"];
         $password1 = $_REQUEST["password"];
         $nombre = $_REQUEST["nombre"];
@@ -18,62 +18,62 @@
             return;
         }
 
-        //tries to connect to the databse
+        //Intentamos conectarnos a la base de datos
         $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //Executes an insert sql query
-        $table = "usuarios";
-        $sql = "INSERT INTO usuarios (username, password, nombre, apellidos, email) VALUES ('$username1', '$password1', '$nombre', '$apellidos', '$email')";
-        $result = $conn->exec($sql);
-
-
-        /*Verify users NO SE PORQUE NO VA
-        $verificar_email = mysqli_query($conn, "SELECT * FROM usuarios WHERE email='$email' ");
-        $verificar_username = mysqli_query($conn, "SELECT * FROM usuarios WHERE username='$username1' ");
-
-        if(mysqli_num_rows($verificar_email) > 0){
-            echo ' 
-                <script>
-                    alert("Este correo electrónico ya se encuentra registrado, inténtalo con otro diferente");
-                    window.location = "../../index.html";
-                </script>
-            ';
-            exit();            
-        }
-
-        if(mysql_num_rows($verificar_username)>0){
+        //Comprobamos si existe el numero de usuario introducido mediante el número de filas que devuelve
+        $result = $conn->prepare("SELECT * FROM usuarios WHERE username='$username1'");
+        $result->bindParam("username",$username1,PDO::PARAM_STR);
+        $result->execute();
+        $count = $result->rowCount();
+        if($count){ //Si existe ya una fila con ese nombre de usuario, prohibe el registro
             echo ' 
                 <script>
                     alert("Este nombre de usuario ya se encuentra registrado, inténtalo con otro diferente");
                     window.location = "../../index.html";
                 </script>
             ';
-            exit();            
-        }
-        */
+            exit();             
+        }else{ //Si no existe el nombre de usuario, realizamos la misma comprobación pero con el email
+            $result1 = $conn->prepare("SELECT * FROM usuarios WHERE email='$email'");
+            $result1->bindParam("email",$email,PDO::PARAM_STR);
+            $result1->execute();
+            $count = $result1->rowCount(); 
+            if($count){ //Si hay un email igual ya registrado
+                echo ' 
+                    <script>
+                        alert("Este correo electrónico ya se encuentra registrado, inténtalo con otro diferente");
+                        window.location = "../../index.html";
+                    </script>
+                ';
+                exit();             
+            }else{
+                //Si no hay ni un nombre de usuario ni un email igual, entonces ejecutamos un insert sql query para realizar el registro
+                $sql = "INSERT INTO usuarios (username, password, nombre, apellidos, email) VALUES ('$username1', '$password1', '$nombre', '$apellidos', '$email')";
+                $result2 = $conn->exec($sql);
 
-        if (!$result) {
-            http_response_code(500);
-            echo ' 
-                <script>
-                    alert("No se ha podido completar el registro, inténtelo de nuevo");
-                    window.location = "../../index.html";
-                </script>
-            ';
-            //print "ERROR: " . $conn->errorMsg() . "\r\n";
-        }
-        else {
-            http_response_code(200);
-            echo ' 
-                <script>
-                    alert("Usuario registrado satisfactoriamente");
-                    window.location = "../../index.html";
-                </script>
-            ';
-            //print $name . " was succesfully added to the database \r\n";
-        }
+                if (!$result2) { //Si algo ha fallado
+                    http_response_code(500);
+                    echo ' 
+                        <script>
+                            alert("No se ha podido completar el registro, inténtelo de nuevo");
+                            window.location = "../../index.html";
+                        </script>
+                    ';
+                }
+                else { //Si todo ha salido correctamente
+                    http_response_code(200);
+                    echo ' 
+                        <script>
+                            alert("Usuario registrado satisfactoriamente");
+                            window.location = "../../index.html";
+                        </script>
+                    ';
+                }
 
+            }
+        }
     }
     catch (PDOException $e) {
         if ($e->errorInfo[1] == 1062) {

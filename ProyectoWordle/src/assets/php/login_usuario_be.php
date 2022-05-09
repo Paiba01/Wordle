@@ -5,7 +5,7 @@
     $database = "id18899575_wordlebd";
 
     try {          
-        //Gets the insertion data
+        //Obtenemos los datos insertados
         $username2 = $_POST["username"];
         $password2 = $_POST["password"];
         
@@ -15,22 +15,23 @@
             return;
         }
 
-        //tries to connect to the databse
+        //Intento de conexión a la base de datos
         $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //Executes an insert sql query
-        //$table = "usuarios";
-        //$sql = "SELECT * FROM usuarios WHERE username='$username2' AND password='$password2'";
-        //$result = $conn->query($sql);
-
+        //Ejecutar un select sql query
         $result = $conn->prepare("SELECT * FROM usuarios WHERE username='$username2' AND password='$password2'");
         $result->bindParam("username",$username2,PDO::PARAM_STR);
         $result->bindParam("password",$password2,PDO::PARAM_STR);
         $result->execute();
         $count = $result->rowCount();
         
+        //Comprobamos si ha recogido valores en la variable count,
+        //si recoge valores significa que está en la bd y
+        //si no recoge ningún valor es que no
+        //solo existirá habrá un 1 en count debido a que existe una restricción en el registro de usuarios dobles
         if($count){
+            http_response_code(200);
             echo ' 
                 <script>
                     alert("Sesión iniciada correctamente");
@@ -38,11 +39,12 @@
                 </script>
             ';
         }else{
+            http_response_code(500);
             echo ' 
-            <script>
-            alert("Los datos no coinciden, inténtelo de nuevo");
-            window.location = "../../index.html";
-        </script>
+                <script>
+                    alert("Los datos no coinciden, inténtelo de nuevo");
+                    window.location = "../../index.html";
+                </script>
             ';  
         }
 
