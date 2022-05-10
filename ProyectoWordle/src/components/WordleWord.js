@@ -17,6 +17,8 @@ class WordleWord extends HTMLElement {
         display: flex;
       }
       .letter {
+        position: relative;
+        top: 100px;
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -24,7 +26,7 @@ class WordleWord extends HTMLElement {
         height: var(--size-letter);
         border: 2px solid #404040;
         padding: 5px;
-        margin: 2px;
+        margin: 5px;
         font-size: 2rem;
         text-transform: uppercase;
       }
@@ -42,7 +44,7 @@ class WordleWord extends HTMLElement {
         display: inline-flex;
         align-items: center;
         right: -42px;
-        top: 10px;
+        top: 110px;
         transition:
           transform 0.5s,
           opacity 0.5s;

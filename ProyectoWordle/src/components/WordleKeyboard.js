@@ -49,7 +49,7 @@ class WordleKeyboard extends HTMLElement {
         align-items: flex-start;
         flex-wrap: wrap;
         gap: 8px 4px;
-        width: 450px;
+        width: 550px;
         margin: 1em 0;
       }
       .letter {
@@ -57,7 +57,8 @@ class WordleKeyboard extends HTMLElement {
         color: #fff;
         font-family: Arial;
         font-weight: bold;
-        padding: 20px 14px;
+        padding: 20px 16px;
+        margin: 3px 2px;
         border-radius: 4px;
         width: 12px;
         text-transform: uppercase;
