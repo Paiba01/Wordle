@@ -5152,7 +5152,7 @@ class WordleGame extends HTMLElement {
       <input type="checkbox" id="btn-nav" class="checkbox">
         <header>
           <div class="header-container">
-            <img class="header-logo" src="Wordle/ProyectoWordle/src/assets/images/W.png"> 
+            <img class="header-logo" src="./assets/images/W.png"> 
             <label for="btn-nav" class="btn-label">
               <div class="header-button"></div>   
             </label>
@@ -5161,9 +5161,13 @@ class WordleGame extends HTMLElement {
 
       <nav class="menu">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contacto</li>
+          <li>Editar perfil</li>
+          <li>Puntuación</li>
+          <li>Dificultad</li>
+          <li>Entorno</li>
+          <li>Modo daltónico</li>
+          <li>Social</li>
+          <li>Cerrar sesión</li>
         </ul>      
         <ul>
           <a href="" class="icon-facebook"></a>
