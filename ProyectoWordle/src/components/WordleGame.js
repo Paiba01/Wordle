@@ -5154,17 +5154,15 @@ class WordleGame extends HTMLElement {
           <div class="header-container">
             <img class="header-logo" src="./assets/images/W.png"> 
             <label for="btn-nav" class="btn-label">
-              <div class="header-button"></div>   
+              <div class="header-button"></div> 
             </label>
           </div> 
         </header>
-
       <nav class="menu">
         <ul>
           <li>Editar perfil</li>
           <li>Puntuación</li>
           <li>Dificultad</li>
-          <li>Entorno</li>
           <li>Modo daltónico</li>
           <li>Social</li>
           <li>Cerrar sesión</li>
