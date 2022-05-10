@@ -31,7 +31,7 @@
         //si no recoge ningún valor es que no
         //solo existirá habrá un 1 en count debido a que existe una restricción en el registro de usuarios dobles
         if($count){
-            http_response_code(200);
+            http_response_code(200);   
             echo ' 
                 <script>
                     alert("Sesión iniciada correctamente");
