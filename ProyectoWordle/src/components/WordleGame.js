@@ -4954,7 +4954,7 @@ class WordleGame extends HTMLElement {
           flex-direction: column;
           font-weight: bold;
         }
-        * {
+      *{
         margin: 0;
         padding: 0;
       }
@@ -4982,7 +4982,7 @@ class WordleGame extends HTMLElement {
         align-items: center;
       }
       .header-logo {
-        width: 3rem;
+        width: 4rem;
       }
       .btn-label {
         width: 2rem;
@@ -5035,7 +5035,7 @@ class WordleGame extends HTMLElement {
         text-decoration: none;
       }
       .checkbox:checked ~ .menu {
-        background: #fff;
+        background: #rgb(221, 220, 220);
         top: 0rem;
       }
       .checkbox:checked + header .header-container label .header-button {
