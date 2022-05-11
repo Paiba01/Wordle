@@ -79,6 +79,7 @@ class WordleWord extends HTMLElement {
       :host(.sended) .letter:nth-child(3) { --delay: 0.4s; }
       :host(.sended) .letter:nth-child(4) { --delay: 0.6s; }
       :host(.sended) .letter:nth-child(5) { --delay: 0.8s; }
+      :host(.sended) .letter:nth-child(6) { --delay: 1.0s; }
       @keyframes spin {
         0% { transform: scaleY(0); }
         100% { transform: scaleY(1); }
