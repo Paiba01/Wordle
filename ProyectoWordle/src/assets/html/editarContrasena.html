@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilos.css">
-    <title>Editar correo</title>
+    <title>Editar contraseña</title>
 </head>
 <body>
     <main>
@@ -13,13 +13,14 @@
             <div class="caja__trasera" style="height: 420px;">
                 <div class="contenedor__editProfile">
 						<div class="group">
-                            <h2>Editar Correo Electronico</h2>
-                            <div class="group"><label class="label" for="user"></label> <input id="user" class="input" type="text" placeholder="Contraseña antigua" name="contrasena1" /></div>
+                            <form action="../../assets/php/editar_perfil_contrasena.php" method="POST" class="formulario__login">
+                            <h2>Editar Contraseña</h2>
                             <div class="group"><label class="label" for="user"></label> <input id="user" class="input" type="text" placeholder="Contraseña nueva" name="contrasena2" /></div>
                             <button>Editar Perfil</button>
                             <a href="./indexEditarPerfil.html">
                                 <button>Cancelar</button>
                             </a>
+                            </form>
 						</div>
                 </div>
             </div>

@@ -5,11 +5,12 @@
     $database = "id18899575_wordlebd";
 
     try {          
+        session_start();
         //Obtenemos los datos insertados
-        $contrasena3 = $_POST["contrasena1"];
+        $identificador = $_SESSION["id"];
         $contrasena4 = $_POST["contrasena2"];
         
-        if ($contrasena3 == "" || $contrasena4 == "") {
+        if ($identificador == "" || $contrasena4 == "") {
             http_response_code(400);
             echo "Bad Request";
             return;
@@ -20,8 +21,8 @@
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //Ejecutar un select sql query
-        $result = $conn->prepare("SELECT * FROM usuarios WHERE password='$contrasena3'");
-        $result->bindParam("password",$contrasena3,PDO::PARAM_STR);
+        $result = $conn->prepare("SELECT * FROM usuarios WHERE userId='$identificador'");
+        $result->bindParam("userId",$identificador,PDO::PARAM_STR);
         $result->execute();
         $count = $result->rowCount();
         
@@ -31,21 +32,8 @@
         //solo existirá habrá un 1 en count debido a que existe una restricción en el registro de usuarios dobles
         if($count){
             http_response_code(200);   
-            $result1 = $conn->prepare("SELECT * FROM usuarios WHERE password='$contrasena4'");
-            $result1->bindParam("password",$contrasena4,PDO::PARAM_STR);
-            $result1->execute();
-            $count = $result1->rowCount(); 
-            if($count){ //Si hay un email igual ya registrado
-                echo ' 
-                    <script>
-                        alert("El nombre de usuario no se encuentra registrado, inténtalo con otro diferente");
-                        window.location = "../../index.html";
-                    </script>
-                ';
-                exit();             
-            }else{
-                //Si no hay ni un nombre de usuario ni un email igual, entonces ejecutamos un insert sql query para realizar el registro
-                $sql = "UPDATE usuarios Set password='$contrasena4' Where password='$contrasena3'";
+                //Ejecutamos un update sql query para realizar la actualización
+                $sql = "UPDATE usuarios Set password='$contrasena4' Where userId='$identificador'";
                 $result2 = $conn->exec($sql);
 
                 if (!$result2) { //Si algo ha fallado
@@ -53,7 +41,7 @@
                     echo ' 
                         <script>
                             alert("No se ha podido modificar, inténtelo de nuevo");
-                            window.location = "../../index.html";
+                            window.location = "../html/editarContrasena.html";
                         </script>
                     ';
                 }
@@ -62,17 +50,17 @@
                     echo ' 
                         <script>
                             alert("Usuario modificado satisfactoriamente");
-                            window.location = "../../index.html";
+                            window.location = "../../wordle.html";
                         </script>
                     ';
                 }
-            }    
+              
         }else{
             http_response_code(500);
             echo ' 
                 <script>
                     alert("Los datos no coinciden, inténtelo de nuevo");
-                    window.location = "../../index.html";
+                    window.location = "../html/editarContrasena.html";
                 </script>
             ';  
         }
