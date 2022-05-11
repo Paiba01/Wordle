@@ -206,6 +206,27 @@ class WordleWord extends HTMLElement {
       ${this.getTemplateLetters()}
     </div>`;
   }
+  
+  /*colour() {
+    if (){
+      `
+      .letter {
+        position: relative;
+        top: 100px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--size-letter);
+        height: var(--size-letter);
+        border: 2px solid #404040;
+        padding: 5px;
+        margin: 5px;
+        font-size: 2rem;
+        text-transform: uppercase;
+      }
+      `
+    }
+  }*/
 }
 
 customElements.define("wordle-word", WordleWord);

@@ -5160,18 +5160,12 @@ class WordleGame extends HTMLElement {
         </header>
       <nav class="menu">
         <ul>
-          <li>Editar perfil</li>
           <li>Puntuación</li>
           <li>Dificultad</li>
+          <a href="./assets/html/indexEditarPerfil.html"> Editar perfil </a>
           <li>Modo daltónico</li>
           <li>Social</li>
           <li>Cerrar sesión</li>
-        </ul>      
-        <ul>
-          <a href="" class="icon-facebook"></a>
-          <a href="" class="icon-twitter"></a>
-          <a href="" class="icon-youtube"></a>
-          <a href="" class="icon-instagram"></a>
         </ul>      
       </nav>        
 
@@ -5186,6 +5180,18 @@ class WordleGame extends HTMLElement {
         <wordle-keyboard></wordle-keyboard>
       </div>`;
     }
+  }
+
+  document.getElementById('id-sun').onclick = function(){
+    document.getElementById('page').classList.remove('dark-mode')
+    document.getElementById('id-moon').classList.remove('active')
+    this.classList.add('active')
+  }
+
+  document.getElementById('id-moon').onclick = function(){
+    document.getElementById('page').classList.add('dark-mode')
+    document.getElementById('id-sun').classList.remove('active')
+    this.classList.add('active')
   }
   
   customElements.define("wordle-game", WordleGame);

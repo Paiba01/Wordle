@@ -35,7 +35,7 @@
             echo ' 
                 <script>
                     alert("Sesión iniciada correctamente");
-                    window.location = "../../barra.html";
+                    window.location = "../../wordle.html";
                 </script>
             ';
         }else{
