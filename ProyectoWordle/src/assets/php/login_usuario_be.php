@@ -25,13 +25,22 @@
         $result->bindParam("password",$password2,PDO::PARAM_STR);
         $result->execute();
         $count = $result->rowCount();
-        
+
         //Comprobamos si ha recogido valores en la variable count,
         //si recoge valores significa que está en la bd y
         //si no recoge ningún valor es que no
         //solo existirá habrá un 1 en count debido a que existe una restricción en el registro de usuarios dobles
         if($count){
-            http_response_code(200);   
+            http_response_code(200);  
+            $result2 = $conn->prepare("SELECT * FROM usuarios WHERE username='$username2' AND password='$password2'");
+            $result2->bindParam("username",$username2,PDO::PARAM_STR);
+            $result2->bindParam("password",$password2,PDO::PARAM_STR);
+            $result2->execute();
+
+            $userID = $result2->fetchColumn(0);
+            $_SESSION["id"] = "$userID"; //Añadimos el identificador que tenga el usuario a la sesión         
+            $_SESSION["username"]=$username2; //Añadimos el nombre de usuario a la sesión 
+            
             echo ' 
                 <script>
                     alert("Sesión iniciada correctamente");
