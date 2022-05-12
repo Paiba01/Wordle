@@ -220,4 +220,21 @@ main{
     .contenedor__login-register form{
         position: relative;
     }
+
+    table{
+        width: 50%;
+        margin: auto;
+        background-color: rgb(175, 183, 241);
+        border: solid 2px #0039e5;
+        padding: 5px;
+    }
+    
+    td{
+        padding: 5px 0;
+    }
+    
+    h2{
+        text-align: center;
+        color: #fff;
+    }
 }
