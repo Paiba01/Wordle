@@ -5165,7 +5165,8 @@ class WordleGame extends HTMLElement {
           <a href="./assets/html/indexEditarPerfil.html"> Editar perfil </a>
           <a href="./assets/php/cerrar_sesion.php"> Cerrar sesión </a>
           <a href="./assets/html/dificultad.html"> Elegir dificultad </a>
-          <a href="./assets/php/formulario.php"> Social </a>
+          <a href="./assets/php/mostrar_blog.php"> Social </a>
+          <a href="./assets/html/indexAmigos.html"> Amigos </a>
           <li>Modo daltónico</li>
         </ul>      
       </nav>        

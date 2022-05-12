@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+    <title>Agregar amigos</title>
+</head>
+<body>
+    <main>
+        <div class="contenedor__todo">
+            <div class="caja__trasera" style="height: 420px;">
+                <div class="contenedor__editProfile">
+						<div class="group">
+                            <form action="../../assets/php/agregarAmigos.php" method="POST" class="formulario__login">
+                            <h2>Agregar amigos</h2>
+                            <div class="group"><label class="label" for="user"></label> <input id="user" class="input" type="text" placeholder="Codigo identificador" name="ident" /></div>
+                            <div class="group"><label class="label" for="user"></label> <input id="user" class="input" type="text" placeholder="Nombre de usuario" name="nick" /></div>
+                            <button>Editar Perfil</button>
+                            <input type="button" name="Cancelar" value="Cancelar" onClick="location.href='./indexAmigos.html'">
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

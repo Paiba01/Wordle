@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Blog</title>
+</head>
+<body>
+<header class="header">
+        <div id="encabezado">
+            <div id="logo">
+                BLOG WORDLE
+            </div>
+
+            <div id="menu">
+                <ul>
+                    <li><a href="../html/formulario.html" class="active-menu">Añadir comentario</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 <?php
 
     $servername = "localhost";
@@ -26,10 +47,20 @@
         }
         else { //Si todo ha salido correctamente
             http_response_code(200);
+        
             while($registro = $result2->fetch(PDO::FETCH_ASSOC)){
+                echo "<section id='principal'>";
+                echo "<section id='publicaciones'>";
+                echo "<article class='post'>";
                 echo "<h3>" . $registro['titulo'] . "</h3>";
+                echo "<p>";
                 echo "<h4>" . $registro['fecha'] . "</h4>";
-                echo "<div style='width:400px'>" . $registro['comentario'] . " </div><br/><br/>";
+                echo "<p class='parrafo-post'>" . $registro['comentario'] . "</p>";
+                echo "<div style='width:400px'>" . "<h4>Realizado por: " . $registro['username'] . "</h4>" . "</div><br/><br/>";
+                echo "</article>";
+                echo "</section>";
+                echo "</section id='sidebar'></section>";
+                echo "</section>";
             }
         }
     }
