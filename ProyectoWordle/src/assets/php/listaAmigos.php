@@ -1,4 +1,5 @@
 <?php
+
     $servername = "localhost";
     $username = "id18899575_p92dogoj";
     $password = "acd//a-|^0pW|@3A";
@@ -27,9 +28,18 @@
         else { //Si todo ha salido correctamente
             http_response_code(200);
             while($lista = $result2->fetch(PDO::FETCH_ASSOC)){
+                echo "<section id='principal'>";
+                echo "<section id='publicaciones'>";
+                echo "<article class='post'>";
                 echo "<h3>" . $lista['nombre'] . "</h3>";
+                echo "<p>";
                 echo "<h4>" . $lista['apellidos'] . "</h4>";
-                echo "<h4>" . $lista['username'] . "</h4>";
+                echo "<p class='parrafo-post'>" . $lista['username'] . "</p>";
+                echo "<div style='width:400px'>" . "<h4>Realizado por: " . $lista['username'] . "</h4>" . "</div><br/><br/>";
+                echo "</article>";
+                echo "</section>";
+                echo "</section id='sidebar'></section>";
+                echo "</section>";
             }
         }
     }
@@ -45,3 +55,26 @@
     }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Mis amigos</title>
+</head>
+<body>
+<header class="header">
+        <div id="encabezado">
+            <div id="logo">
+                AMIGOS WORDLE
+            </div>
+
+            <div id="menu">
+                <ul>
+                    <li><a href="../html/agregarAmigo.html" class="active-menu">Añadir amigo</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
