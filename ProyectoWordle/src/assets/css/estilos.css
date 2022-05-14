@@ -28,6 +28,13 @@ main{
     position: relative;
 }
 
+.contenedor__todo2{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
 .caja__trasera{
     width: 100%;
     padding: 10px 20px;
@@ -36,7 +43,16 @@ main{
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba(0, 128, 255, 0.5);
+}
 
+.caja__trasera2{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
 }
 
 .caja__trasera div{
@@ -139,6 +155,10 @@ main{
     left: 10px;
 }
 
+.contenedor__editProfile2{
+    
+}
+
 .contenedor__editProfile form{
     width: 100%;
     padding: 5px;
@@ -233,6 +253,8 @@ main{
 }
 
 #menu{
+    position: relative;
+    top:1000px;
     width: 30%;
     height: 30px;
     float: right;
@@ -266,6 +288,18 @@ main{
     border-radius: 5px 5px 0px 0px;
     padding: 10px;
     font-size: 20px;
+    position: relative;
+    top: -55px;
+}
+
+#menu ul li .active-menu2{
+    background: #585858;
+    color: #fff;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+    font-size: 20px;
+    position: relative;
+    top: -65;
 }
 
 #principal{
@@ -398,4 +432,6 @@ td{
 h2{
     text-align: center;
     color: #fff;
+    position: relative;
+    top: -25px;
 }

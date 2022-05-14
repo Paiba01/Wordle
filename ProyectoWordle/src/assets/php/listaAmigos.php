@@ -26,16 +26,30 @@
             ';
         }
         else { //Si todo ha salido correctamente
+        echo "<header class='header'>";
+        echo "<div id='encabezado'>";
+        echo "<div id='logo'>" . "AMIGOS" . "</div>";
+        echo "<div id='menu'>";
+        echo "<ul>";
+        echo "<li>";
+        echo "<ul><li><a href='../html/agregarAmigo.html' class='active-menu2'>";
+        echo "Añadir amigo." . " Tu ID es: " . $idOrg;
+        echo "</a>";
+        echo "</li>";
+        echo "</ul>";
+        echo "</div>";
+        echo "</div>";
+        echo "</header>";
             http_response_code(200);
             while($lista = $result2->fetch(PDO::FETCH_ASSOC)){
                 echo "<section id='principal'>";
                 echo "<section id='publicaciones'>";
                 echo "<article class='post'>";
-                echo "<h3>" . $lista['nombre'] . "</h3>";
+                echo "<h3>Nombre: " . $lista['nombre'] . "</h3>";
                 echo "<p>";
-                echo "<h4>" . $lista['apellidos'] . "</h4>";
-                echo "<p class='parrafo-post'>" . $lista['username'] . "</p>";
-                echo "<div style='width:400px'>" . "<h4>Realizado por: " . $lista['username'] . "</h4>" . "</div><br/><br/>";
+                echo "<h3>Apellidos: " . $lista['apellidos'] . "</h3>";
+                echo "<h3>Username: " . $lista['username'] . "</h3>";
+                
                 echo "</article>";
                 echo "</section>";
                 echo "</section id='sidebar'></section>";
@@ -60,21 +74,9 @@
     <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/estilos.css">
-    <title>Mis amigos</title>
+    <title>Amigos</title>
 </head>
 <body>
-<header class="header">
-        <div id="encabezado">
-            <div id="logo">
-                AMIGOS WORDLE
-            </div>
 
-            <div id="menu">
-                <ul>
-                    <li><a href="../html/agregarAmigo.html" class="active-menu">Añadir amigo</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
 </body>
 </html>

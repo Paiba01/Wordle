@@ -116,7 +116,7 @@ class WordleGame extends HTMLElement {
       .menu {
         background: #d1d1d1;
         width: 100%;
-        height: 10rem;
+        height: 5rem;
         position: fixed;
         z-index: 9;
         top: -12rem;
@@ -262,17 +262,16 @@ class WordleGame extends HTMLElement {
             </label>
           </div> 
         </header>
-      <nav class="menu">
+        <nav class="menu">
         <ul>
-          <li>Puntuación</li>
-          <li>Dificultad</li>
-          <a href="./assets/html/indexEditarPerfil.html"> Editar perfil </a>
-          <a href="./assets/php/cerrar_sesion.php"> Cerrar sesión </a>
-          <a href="./assets/html/dificultad.html"> Elegir dificultad </a>
-          <li>Modo daltónico</li>
-          <li>Social</li>
+        <a style= "position: relative; top: -15px" href="./assets/html/indexEditarPerfil.html"> <b>Editar perfil </b></a>
+        <a style= "position: relative; top: -15px" href="./assets/html/indexAmigos.html"> <b>Amigos </b></a>
+        <a style= "position: relative; top: -15px" href="./assets/php/mostrar_blog.php"> <b>Social </b></a>
+        <a style= "position: relative; top: -15px" href="./assets/html/dificultad.html"> <b>Elegir dificultad </b></a>
+        <a style= "position: relative; top: -15px" href="./assets/php/cerrar_sesion.php"> <b>Cerrar sesión </b></a>
         </ul>      
-      </nav>        
+      </nav>             
+
 
         <div class="words">
           <wordle-word current></wordle-word>
