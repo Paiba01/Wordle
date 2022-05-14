@@ -30,4 +30,4 @@ Play and have fun while learning new words.
 - **Pablo López Gosálvez** - [Github](https://github.com/pabloccf)
 - **Pablo Ibañez Fernández-Delgado** - [Github](https://github.com/Paiba01)
 - **Rubén Barona Alba** - [Github](https://github.com/rubenbarona/)
-<!-- - **David Barbero Jurado** - [Github] -->
+- **David Barbero Jurado** - [Github](https://github.com/d4vidsn8w)
