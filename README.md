@@ -1,4 +1,4 @@
-
+<img align="center" src="https://github.com/Paiba01/Wordle/blob/main/logoWordle.jpg" alt="Wordle">
 
 # Wordle
 
