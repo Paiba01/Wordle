@@ -264,10 +264,13 @@ class WordleGame extends HTMLElement {
         </header>
         <nav class="menu">
         <ul>
-        <a style= "position: relative; top: -15px" href="./assets/html/indexEditarPerfil.html"> <b>Editar perfil </b></a>
+        <a style= "position: relative; top: -15px" href="./assets/html/indexEditarPerfil.html"> <b>Editar perfil</b></a>
         <a style= "position: relative; top: -15px" href="./assets/html/indexAmigos.html"> <b>Amigos </b></a>
         <a style= "position: relative; top: -15px" href="./assets/php/mostrar_blog.php"> <b>Blog </b></a>
         <a style= "position: relative; top: -15px" href="./assets/html/dificultad.html"> <b>Elegir dificultad </b></a>
+        <a style= "position: relative; top: -15px" href="./assets/html/comingsoon.html"> <b>Puntuacion </b></a>
+        <a style= "position: relative; top: -15px" href="./assets/html/comingsoon.html"> <b>Chat </b></a>
+        <a style= "position: relative; top: -15px" href="./assets/html/comingsoon.html"> <b>Modo daltonico </b></a>
         <a style= "position: relative; top: -15px" href="./assets/php/cerrar_sesion.php"> <b>Cerrar sesión </b></a>
         </ul>      
       </nav>             
