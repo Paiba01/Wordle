@@ -3,6 +3,7 @@
     <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
     <title>Blog</title>
 </head>
 <body>
@@ -15,6 +16,7 @@
             <div id="menu">
                 <ul>
                     <li><a href="../html/formulario.html" class="active-menu">Añadir comentario</a></li>
+                    <li><a href="../../wordle.html" class="active-menu">Volver atrás</a></li>
                 </ul>
             </div>
         </div>

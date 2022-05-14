@@ -1,81 +1,81 @@
 @media (prefers-color-scheme: light){
-    :root {
-        --background-color: #fff
-        --text-color: #121213
-    }
+  :root {
+      --background-color: #fff
+      --text-color: #121213
+  }
 }
 
 @media (prefers-color-scheme: dark){
-    :root {
-        --background-color: #1212123
-        --text-color: #eee
-    }
+  :root {
+      --background-color: #1212123
+      --text-color: #eee
+  }
 }
 
 :root {
-    background: var(--background-color);
-    color: var(--text-color);
+  background: var(--background-color);
+  color: var(--text-color);
 }
 
 body { 
-    margin: 0;
+  margin: 0;
 }
 
 .container-btn-mode{
-    position: absolute;
-    top:870px;
-    right: 30px;
-    cursor: pointer;
-    z-index: 2;
-    font-size:0;
-  }
-  .btn-mode{
-    display: inline-block;
-    width: 50px;
-    height: 30px;
-    border:2px ;
-    transition: background-color .5s;
-  }
-  .btn-mode i {
-    display: block;
-    font-size: 17px;
-    text-align: center;
-    line-height: 30px;
-  }
-  .btn-mode.sun{
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-right: 1px solid transparent;
-  }
-  .btn-mode.moon{
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-  .active{
-    background-color:black;
-    color:#ffcd5c !important;
-  }
-  .dark-mode{
-    background-color: #272727;
-    transition:background-color .5s;
-  }
-  .dark-mode .card{
-    background-color: #1A1C1E;
-  }
-  .dark-mode h1, .dark-mode h2, .dark-mode .btn-contact{
-    color:white;
-  }
-  .dark-mode .btn-mode{
-    background-color:#1A1C1E;
-    border:1px solid white;
-    color:white;
-  }
+  position: absolute;
+  top:900px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 2;
+  font-size:0;
+}
+.btn-mode{
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  border:2px ;
+  transition: background-color .5s;
+}
+.btn-mode i {
+  display: block;
+  font-size: 17px;
+  text-align: center;
+  line-height: 30px;
+}
+.btn-mode.sun{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right: 1px solid transparent;
+}
+.btn-mode.moon{
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.active{
+  background-color:black;
+  color:#ffcd5c !important;
+}
+.dark-mode{
+  background-color: #272727;
+  transition:background-color .5s;
+}
+.dark-mode .card{
+  background-color: #1A1C1E;
+}
+.dark-mode h1, .dark-mode h2, .dark-mode .btn-contact{
+  color:white;
+}
+.dark-mode .btn-mode{
+  background-color:#1A1C1E;
+  border:1px solid white;
+  color:white;
+}
 
-  .container-btn-mode-dalt{
-    position: absolute;
-    top:600px;
-    right: 70px;
-    cursor: pointer;
-    z-index: 2;
-    font-size:0;
-  }
+.container-btn-mode-dalt{
+  position: absolute;
+  top:600px;
+  right: 70px;
+  cursor: pointer;
+  z-index: 2;
+  font-size:0;
+}

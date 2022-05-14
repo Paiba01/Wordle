@@ -5012,7 +5012,7 @@ class WordleGame extends HTMLElement {
       .menu {
         background: #d1d1d1;
         width: 100%;
-        height: 5rem;
+        height: 10rem;
         position: fixed;
         z-index: 9;
         top: -12rem;
@@ -5152,7 +5152,7 @@ class WordleGame extends HTMLElement {
       <input type="checkbox" id="btn-nav" class="checkbox">
         <header>
           <div class="header-container">
-            <img class="header-logo" src="./assets/images/W.png"> 
+            <a  href="wordle.html"><img class="header-logo" src="./assets/images/W.png"></a> 
             <label for="btn-nav" class="btn-label">
               <div class="header-button"></div> 
             </label>
@@ -5160,9 +5160,9 @@ class WordleGame extends HTMLElement {
         </header>
       <nav class="menu">
         <ul>
-          <a style= "position: relative; top: -15px" href="./assets/html/indexEditarPerfil.html"> <b>Editar perfil </b></a>
+          <a style= "position: relative; top: -15px" href="./assets/html/indexEditarPerfil.html"> <b>Editar perfil</b></a>
           <a style= "position: relative; top: -15px" href="./assets/html/indexAmigos.html"> <b>Amigos </b></a>
-          <a style= "position: relative; top: -15px" href="./assets/php/mostrar_blog.php"> <b>Social </b></a>
+          <a style= "position: relative; top: -15px" href="./assets/php/mostrar_blog.php"> <b>Blog </b></a>
           <a style= "position: relative; top: -15px" href="./assets/html/dificultad.html"> <b>Elegir dificultad </b></a>
           <a style= "position: relative; top: -15px" href="./assets/php/cerrar_sesion.php"> <b>Cerrar sesión </b></a>
 

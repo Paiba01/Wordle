@@ -141,7 +141,7 @@ class WordleSummary extends HTMLElement {
         <p>La palabra era <strong>${this.secretWord}</strong>.</p>
         <hr>
         <div class="text-to-select">
-          <h3>WORDLE JOSELETE ${this.winner ? ":)" : ":("}</h3>
+          <h3>WORDLE ${this.winner ? ":)" : ":("}</h3>
           <p>Tu partida (${this.secretWord}):</p>
           ${this.getStats()}
         </div>

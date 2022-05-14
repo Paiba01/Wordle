@@ -36,6 +36,7 @@
         echo "Añadir amigo." . " Tu ID es: " . $idOrg;
         echo "</a>";
         echo "</li>";
+        echo "<li><a style='top: -98px; left: 280px;' href='../html/indexAmigos.html' class='active-menu'>Volver atrás</a></li>";
         echo "</ul>";
         echo "</div>";
         echo "</div>";
@@ -74,6 +75,7 @@
     <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
     <title>Amigos</title>
 </head>
 <body>
