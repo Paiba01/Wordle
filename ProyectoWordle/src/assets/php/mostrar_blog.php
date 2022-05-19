@@ -16,7 +16,7 @@
             <div id="menu">
                 <ul>
                     <li><a href="../html/formulario.html" class="active-menu">Añadir comentario</a></li>
-                    <li><a href="../../wordle.html" class="active-menu">Volver atrás</a></li>
+                    <li><a style="left: 225px;" href="../../wordle.html" class="active-menu">Volver atrás</a></li>
                 </ul>
             </div>
         </div>
